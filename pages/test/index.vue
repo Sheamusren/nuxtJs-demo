@@ -23,12 +23,13 @@
           GitHub
         </a>
         <a
-          href="https://github.com/nuxt/nuxt.js"
+          href="#"
+          @click.prevent="gotoCSDN"
           target="_blank"
           rel="noopener noreferrer"
           class="button--grey"
         >
-          GitHub
+          CSDN
         </a>
         <a
           href="https://github.com/nuxt/nuxt.js"
@@ -52,7 +53,14 @@
 </template>
 
 <script>
-export default {}
+// import { Route } from '@/utils/messages'
+  export default {
+    methods: {
+      gotoCSDN(){
+        // window.open(url)
+      }
+    }
+  }
 </script>
 
 <style>
