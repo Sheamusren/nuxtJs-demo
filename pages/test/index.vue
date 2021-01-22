@@ -1,105 +1,52 @@
-<template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        nuxt-test
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-        <a
-          href="#"
-          @click.prevent="gotoCSDN"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          CSDN
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
-  </div>
+ <template>
+  <el-table :data="tableData" style="width: 100%">
+    <el-table-column prop="date" label="日期" width="180"> </el-table-column>
+    <el-table-column prop="name" label="姓名" width="180"> </el-table-column>
+    <el-table-column prop="address" label="地址"> </el-table-column>
+  </el-table>
 </template>
 
-<script>
-// import { Route } from '@/utils/messages'
-  export default {
-    methods: {
-      gotoCSDN(){
-        // window.open(url)
-      }
-    }
-  }
+  <script>
+export default {
+  data() {
+    return {
+      tableData: [
+        {
+          date: "2016-05-02",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄",
+        },
+        {
+          date: "2016-05-04",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1517 弄",
+        },
+        {
+          date: "2016-05-01",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1519 弄",
+        },
+        {
+          date: "2016-05-03",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1516 弄",
+        },
+      ],
+    };
+  },
+  created() {
+    const arr = [
+      { name: "tom", age: 11 },
+      { name: "cat", age: 12 },
+      { name: "vim", age: 13 },
+    ];
+    const arrNew = [];
+    const ageArr = arr.forEach((item, index) => {
+      arrNew.push(index);
+    });
+    console.log("ageArr========");
+    console.log(arrNew);
+  },
+  methods: {},
+};
 </script>
-
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
