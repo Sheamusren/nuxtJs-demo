@@ -40,10 +40,11 @@ export default {
       { name: "vim", age: 13 },
     ];
     const arrNew = [];
-    const ageArr = arr.forEach((item, index) => {
-      arrNew.push(index);
+    const ageArr = arr.every((item, index) => {
+      arrNew.push(item.age)
+      return item.age <= 11
     });
-    console.log("ageArr========");
+    console.log(ageArr);
     console.log(arrNew);
   },
   methods: {},
